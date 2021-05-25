@@ -8,16 +8,31 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication {
+public class TodoApplication {
 
 	
 	public static void main(String[] args) {
-	SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(TodoApplication.class, args);
 	}
 	
-	@GetMapping("/hello")
-	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-	return String.format("Hello %s!", name);
+	@GetMapping("/add")
+	public String add(@RequestParam(value = "task", defaultValue = "") String name) {
+		return "";
+	}
+
+	@GetMapping("/remove")
+	public String remove(@RequestParam(value = "id", defaultValue = "") Integer id) {
+		return "";
+	}
+
+	@GetMapping("/update")
+	public String update(@RequestParam(value = "id", defaultValue = "") Integer id) {
+		return "";
+	}
+
+	@GetMapping("/conclude")
+	public String conclude(@RequestParam(value = "id", defaultValue = "") Integer id) {
+		return "";
 	}
 
 }
